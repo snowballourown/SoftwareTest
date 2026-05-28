@@ -17,11 +17,11 @@ pipeline {
             to: 'recipient@gmail.com',
             subject: "✅ [SUCCESS] ${env.JOB_NAME} #${env.BUILD_NUMBER}",
             body: "빌드 성공!\n\nURL: ${env.BUILD_URL}"
-        )
+            )
+        }
     }
-}
         failure {
             echo 'Build failed.'
         }
-    }
 }
+
