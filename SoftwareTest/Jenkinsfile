@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Connection Test') {
+            steps {
+                echo 'Jenkins webhook connection success!'
+                sh 'pwd'
+                sh 'ls -al'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Build succeeded.'
+        }
+        failure {
+            echo 'Build failed.'
+        }
+    }
+}
